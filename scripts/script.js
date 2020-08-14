@@ -13,12 +13,13 @@ const random = function (min, max) {
 
 const randomFloor = Math.floor(random(1, 100));
 
+
   function compareNumbers(num){
     let number = prompt('Угадай число от 1 до 100');
     if (number === null){
-        return 'GAME OVER';
-    }
-    if (!isNumber(number)){
+        alert('GAME OVER');
+    } 
+    else if (!isNumber(number)){
         alert('Введи число!');
         compareNumbers(num);
      }
@@ -29,6 +30,9 @@ const randomFloor = Math.floor(random(1, 100));
         alert('Загаданное число больше');
         compareNumbers(num);
     }
+    else if (+number === num){
+      alert('YOU ARE WIN!!');
+   }
   }
 
   console.log(compareNumbers(randomFloor));
